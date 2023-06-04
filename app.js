@@ -21,10 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-const port = 4500;
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -42,6 +38,10 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
+const port = 3000;
+app.listen(() => {
+  console.log(`Example app listening on port ${app.get('port')}`);
+});
 module.exports = app;
 
 // Use IntelliSense to learn about possible attributes.
