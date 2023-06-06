@@ -1,10 +1,161 @@
 <!DOCTYPE html>
+<script>
+  var tablinks = document.getElementsByClassName('tab-links');
+  var tabcontent = document.getElementsByClassName('tab-content');
+
+  function opentab(ev, tabname) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName('tab-content');
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.remove('active-tab');
+    }
+    tablinks = document.getElementsByClassName('tab-links');
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(' active-link', '');
+    }
+    document.getElementById(tabname).classList.add('active-tab');
+    evt.currentTarget.className += ' active-link';
+  }
+</script>
 <html>
   <%- include partials/head.ejs %>
-  <body id="page-top" class="index">
+  <body>
     <%- include partials/header.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <div class="row p-5">
+      <div class="col-3">
+        <img
+          class="rounded-4 img-fluid img-thumbnail"
+          src="images/myphoto.jpeg"
+          height="500px"
+          width="400px"
+        />
+      </div>
+
+      <div class="col-9">
+        <h1 class="fs-3 fw-bold pb-2">About Me</h1>
+        <hr />
+        <p class="fs-3">
+          Welcome to my portfolio! I am Shivani Kapatel, a motivated and skilled
+          Full-Stack Developer<br />
+          with a passion for Programming and Designing With a diverse<br />
+          range of experiences and a commitment to excellence, I strive to make
+          a <br />
+          impact and achieve outstanding results in everything I do. In this
+          portfolio,<br />
+          I will showcase my achievements, skills, and projects to give you a<br />
+          comprehensive overview of who I am as a professional.
+        </p>
+        <div>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab(event,'skills')">
+              Skills
+            </p>
+            <p class="tab-links" onclick="opentab(event,'experience')">
+              Experience
+            </p>
+            <p class="tab-links" onclick="opentab(event,'education')">
+              Education
+            </p>
+          </div>
+          <div class="tab-content active-tab" id="skills">
+            <div
+              class="progress my-2"
+              role="progressbar"
+              aria-label="Example with label"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="height: 20px"
+            >
+              <div class="progress-bar" style="width: 92%">
+                <span>HTML</span>
+              </div>
+            </div>
+
+            <div
+              class="progress my-2"
+              role="progressbar"
+              aria-label="Example with label"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="height: 20px"
+            >
+              <div class="progress-bar" style="width: 80%">
+                <span>Javascript</span>
+              </div>
+            </div>
+
+            <div
+              class="progress my-2"
+              role="progressbar"
+              aria-label="Example with label"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="height: 20px"
+            >
+              <div class="progress-bar" style="width: 70%">
+                <span>CSS</span>
+              </div>
+            </div>
+
+            <div
+              class="progress my-2"
+              role="progressbar"
+              aria-label="Example with label"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="height: 20px"
+            >
+              <div class="progress-bar" style="width: 65%">
+                <span>Bootstrap</span>
+              </div>
+            </div>
+
+            <div
+              class="progress my-2"
+              role="progressbar"
+              aria-label="Example with label"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="height: 20px"
+            >
+              <div class="progress-bar" style="width: 60%">
+                <span>Java</span>
+              </div>
+            </div>
+            <!--   <ul>
+              <li><span>HTML</span><br />Designing Web/App interface</li>
+              <li><span>CSS</span><br />Designing Web/App interface</li>
+              <li><span>Javascript</span><br />Designing Web/App interface</li>
+              <li><span>C#</span><br />Designing Web/App interface</li>
+            </ul> -->
+          </div>
+          <div class="tab-content" id="experience">
+            <ul>
+              <li>
+                <span>2021-Currwnt</span><br />Designing Web/App interface
+              </li>
+              <li><span>2019-2021</span><br />Designing Web/App interface</li>
+              <li><span>2017-2019</span><br />Designing Web/App interface</li>
+            </ul>
+          </div>
+          <div class="tab-content" id="education">
+            <ul>
+              <li><span>2014</span><br />Designing Web/App interface</li>
+              <li><span>2021</span><br />Designing Web/App interface</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center py-2">
+      <a href="" class="btn btn-sm btn-primary">Download Resume</a>
+    </div>
 
     <%- include partials/footer.ejs %>
   </body>
