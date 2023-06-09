@@ -1,10 +1,79 @@
+<!--
+Student’s Name:Shivani Shyamal Kapatel
+StudentID: 301250126
+Date: 09 June 2023
+COMP229– Web Application Development 
+Express Portfolio Site 
+-->
 <!DOCTYPE html>
 <html>
   <%- include partials/head.ejs %>
-  <body id="page-top" class="index">
+  <script>
+    function submitQuery() {
+      alert('Your query has been submitted successfully!');
+    }
+  </script>
+  <body>
     <%- include partials/header.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <div class="container" style="padding: 50px">
+      <h1 class="fs-3 fw-bold pb-2"><%= title %></h1>
+      <hr />
+      <div class="container p-2">
+        <div class="text-center">
+          <p>Email: <a href="mailto:<%=email%>"><%= email %> </a></p>
+          <p>Phone: <%= phone %></p>
+          <p>Address: <%= address %></p>
+          <p>Available for Freelancing projects</p>
+        </div>
+        <div>
+          <h2 class="text-center">Send your queries</h2>
+          <div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Email address:</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Phone No:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput2"
+                placeholder="123-456-7890"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Your Query:</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+          <div class="text-center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="submitQuery()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <%- include partials/footer.ejs %>
   </body>

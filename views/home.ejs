@@ -1,12 +1,65 @@
+<!--
+Student’s Name:Shivani Shyamal Kapatel
+StudentID: 301250126
+Date: 09 June 2023
+COMP229– Web Application Development 
+Express Portfolio Site 
+-->
 <!DOCTYPE html>
 <html>
   <%- include partials/head.ejs %>
   <body>
     <%- include partials/header.ejs %>
-    <div class="content">
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
+
+    <div class="row p-5">
+      <div class="col-3">
+        <img
+          class="rounded-4 img-fluid img-thumbnail"
+          src="images/myphoto.jpeg"
+          height="500px"
+          width="400px"
+        />
+      </div>
+
+      <div class="col-9">
+        <h6>HELLO EVERYBODY, I AM</h6>
+        <h1 class="fw-bold fst-italic">Shivani Kapatel</h1>
+        <h4>Jr. Full-Stack Developer</h4>
+        <p class="fs-4">
+          As a beginner full-Stack developer, my goal is to acquire practical experience and enhance my skills in 
+          web development and software development. 
+          Currently, I am pursuing a Software Engineering Technician diploma from Centennial College 
+          in Toronto. I am scheduled to graduate in December 2023. 
+          Prior to coming to Canada in December 2020, 
+          I completed my Bachelor's in Civil Engineering in India. 
+          After working in a non-tech field, 
+          I recognized the importance and demand for information technology,
+           which led me to decide to pursue a career in software development.
+            I consider myself a hardworking and dedicated individual who values honesty and 
+            maintains good working relationships. 
+            I am deeply passionate about my work and always eager to learn new technologies everyday.
+        </p>
+        <ul class="list-group fs-6">
+          <li class="list-group-item border-0">
+            <i class="fa-solid fa-phone"></i>
+            <span class="mx-2"> <a href="tel:647-123-4567"><%= phoneno %></a></span>
+          </li>
+          <li class="list-group-item border-0">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="mx-2"><a href="mailto:<%=email%>"><%= email %></a>
+          </li>
+          <li class="list-group-item border-0">
+            <i class="fa-solid fa-house"></i>
+            <span class="mx-2"> <%= address %></span>
+          </li>         
+        </ul>
+
+        <a class="btn btn-primary btn-lg mt-5" href="/aboutme">Learn More</a>
+     
+      </div>
     </div>
+   
+
     <%- include partials/footer.ejs %>
   </body>
 </html>
